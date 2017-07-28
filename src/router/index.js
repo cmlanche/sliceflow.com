@@ -10,10 +10,11 @@ import DropdownMenu from '@/components/DropdownMenu';
 import DrilldownMenu from '@/components/DrilldownMenu';
 import AccordionMenu from '@/components/AccordionMenu';
 import Magellan from '@/components/Magellan';
-import Accordion from '@/components/Accordion';
+import Manager from '@/components/Manager';
 import Dropdown from '@/components/Dropdown';
 import Tabs from '@/components/Tabs';
 import Orbit from '@/components/Orbit';
+import UserInfo from '@/components/UserInfo';
 
 Vue.use(Router);
 
@@ -29,9 +30,10 @@ export default new Router({
     { name: 'drilldown-menu', path: '/drilldown-menu', component: DrilldownMenu },
     { name: 'accordion-menu', path: '/accordion-menu', component: AccordionMenu },
     { name: 'magellan', path: '/magellan', component: Magellan },
-    { name: 'accordion', path: '/accordion', component: Accordion },
+    { name: 'accordion', path: '/manager', component: Manager },
     { name: 'dropdown', path: '/dropdown', component: Dropdown },
     { name: 'tabs', path: '/tabs', component: Tabs },
     { name: 'orbit', path: '/orbit', component: Orbit },
+    { name: 'userinfo', path: '/userinfo', component: UserInfo },
   ],
 });

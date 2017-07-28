@@ -17,7 +17,7 @@ export default {
   name: 'hello',
   data() {
     return {
-      msg: 'Vue + Foundation',
+      msg: 'cmlanche',
     };
   },
 };

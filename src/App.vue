@@ -10,27 +10,36 @@
         <li><router-link to="/drilldown-menu" exact>Drilldown Menu</router-link></li>
         <li><router-link to="/accordion-menu" exact>Accordion Menu</router-link></li>
         <li><router-link to="/magellan" exact>Magellan</router-link></li>
-        <li><router-link to="/accordion" exact>Accordion</router-link></li>
+        <li><router-link to="/manager" exact>Manager</router-link></li>
         <li><router-link to="/dropdown" exact>Dropdown</router-link></li>
         <li><router-link to="/tabs" exact>Tabs</router-link></li>
         <li><router-link to="/orbit" exact>Orbit</router-link></li>
-      </ul>          
+    </ul>        
     </div>
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="top-bar">
-        
-          <ul class="menu expanded">
+        <div class="top-bar-left">
+          <ul class="menu">
             <li class="logo">
-              <router-link to="/">Vue-Foundation</router-link>
+              <router-link to="/">Sliceflow.com</router-link>
             </li>
-            <li><a class="button small menu-button" data-toggle="offCanvas">Menu</a></li>
+            <li>
+              <router-link to="/">主页</router-link>
+            <li>
+            <li>
+              <router-link to="/manager">管理中心</router-link>
+            </li>
           </ul>
-        
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <a class="button small menu-button" data-toggle="offCanvas">登陆</a></li>            
+          </ul>
+        </div>
       </div>
       <div class="content-wrapper">
         <router-view></router-view>
       </div>
-    
     </div>
   </div>
 </template>
