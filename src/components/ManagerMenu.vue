@@ -16,16 +16,16 @@ export default {
     return {
       menus: [
           {
-              title: '个人信息', isActive: true, name: 'userinfo'
+              title: '统计信息', isActive: true, name: 'statistics'
           },
           {
               title: '应用管理', isActive: false, name: 'apps'
           },
           {
-              title: '广告设置', isActive: false, name: 'ads'
+              title: '评论管理', isActive: false, name: 'comments'
           },
           {
-              title: '评论管理', isActive: false, name: 'comments'
+              title: '广告设置', isActive: false, name: 'ads'
           },
       ],
       active: 'active'

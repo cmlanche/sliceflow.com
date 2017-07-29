@@ -1,12 +1,13 @@
 <template>
-  <div class="callout">
-    广告设置
-  </div>
+<div class="row">
+statistics
+</div>
 </template>
 
 <script>
+// 统计信息
 export default {
-  name: 'ads'
+  name: 'statistics',
 }
 </script>
 

@@ -1,20 +1,7 @@
 <template>
   <div id="app">
     <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
-      <ul class="sidebar-menu" data-close="offCanvas">
-        <li><router-link to="/" exact>Home</router-link></li>
-        <li><router-link to="/reveal" exact>Reveal</router-link></li>
-        <li><router-link to="/slider" exact>Slider</router-link></li>
-        <li><router-link to="/tooltip" exact>Tooltip</router-link></li>
-        <li><router-link to="/dropdown-menu" exact>Dropdown Menu</router-link></li>
-        <li><router-link to="/drilldown-menu" exact>Drilldown Menu</router-link></li>
-        <li><router-link to="/accordion-menu" exact>Accordion Menu</router-link></li>
-        <li><router-link to="/magellan" exact>Magellan</router-link></li>
-        <li><router-link to="/manager" exact>Manager</router-link></li>
-        <li><router-link to="/dropdown" exact>Dropdown</router-link></li>
-        <li><router-link to="/tabs" exact>Tabs</router-link></li>
-        <li><router-link to="/orbit" exact>Orbit</router-link></li>
-    </ul>        
+      <user-info></user-info>
     </div>
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="top-bar">
@@ -33,7 +20,7 @@
         </div>
         <div class="top-bar-right">
           <ul class="menu">
-            <a class="button small menu-button" data-toggle="offCanvas">登陆</a></li>            
+            <a class="button small menu-button" data-toggle="offCanvas" v-on:click="onLogin">登陆</a></li>            
           </ul>
         </div>
       </div>
@@ -45,11 +32,21 @@
 </template>
 
 <script>
+import UserInfo from './components/UserInfo'
+
 export default {
   name: 'app',
   mounted() {
     this.offCanvas = new Foundation.OffCanvas($('#offCanvas'));
   },
+  components:{
+    UserInfo
+  },
+  methods: {
+    onLogin(){
+      console.log("onlogin")
+    }
+  }
 };
 </script>
 
@@ -65,7 +62,8 @@ export default {
 
   .logo, .logo a {
     color: $white;
-    font-weight: normal;
+    font-weight: bold;
+    font-size: 18px;
   }
 
   li a.menu-button {
