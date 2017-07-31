@@ -46,10 +46,13 @@ export default {
     onHandler(tag, data){
       console.log(tag);
       if("addapp" == tag){
-        // 添加新引用
-        this.view = AddApp
+        // 添加新网站
+        this.view = AddApp;
+      }else if("addwebsite_success" == tag){
+        // 添加网站成功
+        this.view = Apps;
       }
-    }
+    },
   },
 };
 </script>

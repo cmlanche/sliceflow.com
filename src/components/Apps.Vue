@@ -8,20 +8,10 @@
             <th>创建时间</th>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
+            <tr v-for="w in websites">
+                <td>{{w.id}}</td>
+                <td>{{w.url}}</td>
+                <td>{{w.createdtime}}</td>
             </tr>
         </tbody>
     </table>
@@ -29,13 +19,36 @@
 </template>
 
 <script>
+import * as g from '../gobal'
+
 export default {
     name: 'apps',
+    mounted(){
+        console.log("apps mounted");
+        this.$http.post("/websites/me", {'wement-token': localStorage.getItem('wm-token')}).then(res=>{
+            if(res){
+                if(res.data.code == 0){
+                    console.log("fetch my websites success");
+                    console.log(res.data);
+                    this.websites = res.data.websites;
+                } else if(res.data.code == -1){
+                    g.requestAuth(this.$http);
+                } else {
+                    console.log(res.dark.message);
+                }
+            }
+        })
+    },
     methods: {
         addApp() {
             this.$emit("handler", "addapp")
         }
     },
+    data(){
+        return {
+            websites: [],
+        }
+    }
 }
 </script>
 

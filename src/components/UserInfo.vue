@@ -14,6 +14,7 @@ export default {
   name: 'user-info',
   mounted() {
   },
+  props: ['isLogin'],
 };
 </script>
 

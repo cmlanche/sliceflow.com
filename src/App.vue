@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
-      <user-info></user-info>
+      <user-info is-login="isLogin"></user-info>
     </div>
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="top-bar">
@@ -20,7 +20,12 @@
         </div>
         <div class="top-bar-right">
           <ul class="menu">
-            <a class="button small menu-button" data-toggle="offCanvas" v-on:click="onLogin">登陆</a></li>            
+            <li v-if="isLogin">
+              <a data-toggle="offCanvas" class="headimage-link"><img src="./assets/img/head.jpg" class="headimage"></a>
+            </li>
+            <li v-else>
+              <a class="button small menu-button" v-on:click="onLogin">登陆</a></li>            
+            </li>
           </ul>
         </div>
       </div>
@@ -33,18 +38,72 @@
 
 <script>
 import UserInfo from './components/UserInfo'
+import * as config from './config'
+import * as g from './gobal'
 
 export default {
   name: 'app',
   mounted() {
     this.offCanvas = new Foundation.OffCanvas($('#offCanvas'));
+    this.token = g.getQueryString("wm-token")
+    if(undefined != this.token && null != this.token){
+      localStorage.setItem("wm-token", this.token)
+    }else{
+      this.token = localStorage.getItem("wm-token")
+    }
+    if(undefined != this.token && null != this.token){
+      this.$http.post('/wementinfo', 
+        {"appid": config.getAppId(), 
+        "domain": document.location.host,
+        "wement-token": this.token
+        }).then(res=>{
+          if(res){
+            console.log(res.data);
+            if(res.data.code == 0){
+              console.log("login success");
+              config.getUser().isLogin = true;
+              config.getUser().user = res.data.user;
+              config.getUser().website = res.data.website;
+              console.log(config.getUser());
+              this.isLogin = true;
+              this.initLogin();
+            }else if(res.data.code == -1){
+              // unauth
+              this.isLogin = false;
+              this.requestAuth();
+            }else{
+              this.isLogin = false;
+              console.log("login failed, the reason is " + res.data.message);
+            }
+          }
+        })
+    }
   },
   components:{
     UserInfo
   },
+  data(){
+    return {
+      isLogin: false
+    }
+  },
   methods: {
     onLogin(){
-      console.log("onlogin")
+      if(config.getUser().isLogin){
+        // 已登录
+      }else{
+        // 未登录，先登录
+        this.requestAuth();
+      }
+    },
+    initLogin(){
+      
+    },
+    requestAuth(){
+      g.requestAuth(this.$http);
+    },
+    notifyLogined(){
+      
     }
   }
 };
@@ -90,6 +149,21 @@ export default {
     a.active {
       font-weight: 600;
       color: $primary-color;
+    }
+  }
+
+  .off-canvas-content{
+    .top-bar-right{
+      .menu{
+        .headimage-link{
+          padding: 0 8px 0 0;
+          .headimage{
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+          }
+        }
+      }
     }
   }
 </style>
