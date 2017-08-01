@@ -1,6 +1,6 @@
 <template>
   <div class="callout">
-    广告设置
+    暂未实现
   </div>
 </template>
 
@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  
 </style>

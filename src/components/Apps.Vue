@@ -1,7 +1,7 @@
 <template>
 <div class="row">
     <button type="button" class="primary button" v-on:click="addApp">新增</button>
-    <table>
+    <table class="hover">
         <thead>
             <th>AppId</th>
             <th>URL</th>
@@ -10,7 +10,7 @@
         <tbody>
             <tr v-for="w in websites">
                 <td>{{w.id}}</td>
-                <td>{{w.url}}</td>
+                <td><a :href="w.url" target="_blank">{{w.url}}</a></td>
                 <td>{{w.createdtime}}</td>
             </tr>
         </tbody>
@@ -53,6 +53,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  table{
+    td{
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
 </style>
 
