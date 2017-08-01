@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
-      <user-info is-login="isLogin"></user-info>
+      <user-info v-bind:userdata="userData"></user-info>
     </div>
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="top-bar">
@@ -65,6 +65,7 @@ export default {
               config.getUser().user = res.data.user;
               config.getUser().website = res.data.website;
               console.log(config.getUser());
+              this.userData = config.getUser();
               this.isLogin = true;
               this.initLogin();
             }else if(res.data.code == -1){
@@ -84,7 +85,8 @@ export default {
   },
   data(){
     return {
-      isLogin: false
+      isLogin: false,
+      userData: config.getUser(),
     }
   },
   methods: {

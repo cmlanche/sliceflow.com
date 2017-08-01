@@ -1,20 +1,23 @@
 <template>
-<div class="card">
-    <img src="../assets/img/head.jpg">
+<div class="card" v-if="userdata.isLogin">
+    <img :src="userdata.user.headimage">
     <div class="card-section">
-        <h3><img src="../assets/img/platforms/github.png" class="platform_logo">cmlanche</h3>
-        <p><a href="http://www.cmlanche.com" target="_blank">http://www.cmlanche.com</a></p>
-        <p><button type="button" class="primary button">切换用户</button></p>
+        <h3><img src="../assets/img/platforms/github.png" class="platform_logo">{{userdata.user.nickname}}</h3>
+        <p><a href="http://www.cmlanche.com" target="_blank">{{userdata.user.homepage}}</a></p>
+        <p><button type="button" class="primary button">注销</button></p>
     </div>
 </div>
 </template>
 
 <script>
+import * as config from '../config'
+
 export default {
   name: 'user-info',
   mounted() {
+      console.log("user info")
   },
-  props: ['isLogin'],
+  props: ['userdata'],
 };
 </script>
 
