@@ -6,12 +6,14 @@
             <th>AppId</th>
             <th>URL</th>
             <th>创建时间</th>
+            <th>操作</th>
         </thead>
         <tbody>
             <tr v-for="w in websites">
                 <td>{{w.id}}</td>
                 <td><a :href="w.url" target="_blank">{{w.url}}</a></td>
                 <td>{{w.createdtime}}</td>
+                <td><a v-on:click="clickSiteSetting()">设置</a></td>
             </tr>
         </tbody>
     </table>
@@ -42,6 +44,9 @@ export default {
     methods: {
         addApp() {
             this.$emit("handler", "addapp")
+        },
+        clickSiteSetting(){
+            this.$emit("handler", "site_setting");
         }
     },
     data(){

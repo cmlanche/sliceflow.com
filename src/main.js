@@ -16,9 +16,9 @@ window.$ = jQuery;
 axios.defaults.baseURL = config.getServerUrl();
 Vue.prototype.$http = axios;
 
-require('motion-ui');
+require('jquery');
 require('what-input');
-require('foundation-sites');
+require('../node_modules/foundation-sites/dist/js/foundation');
 
 /* eslint-disable no-new */
 new Vue({
