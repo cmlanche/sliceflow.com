@@ -4,14 +4,18 @@
     <table class="hover">
         <thead>
             <th>AppId</th>
-            <th>URL</th>
+            <th width="120">URL</th>
+            <th width="120">名称</th>
+            <th>Logo</th>
             <th>创建时间</th>
-            <th>操作</th>
+            <th width="48">操作</th>
         </thead>
         <tbody>
             <tr v-for="w in websites">
                 <td>{{w.id}}</td>
                 <td><a :href="w.url" target="_blank">{{w.url}}</a></td>
+                <td>{{w.name}}</td>
+                <td><img :src="w.logo"></td>
                 <td>{{w.createdtime}}</td>
                 <td><a v-on:click="clickSiteSetting()">设置</a></td>
             </tr>
@@ -60,9 +64,14 @@ export default {
 <style lang="scss" scoped>
   table{
     td{
-      font-size: 12px;
+      font-size: 13px;
       font-weight: bold;
     }
   }
+
+  img{
+          width: 32;
+          height: 32;
+      }
 </style>
 

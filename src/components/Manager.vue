@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row root">
     <div class="grid-x grid-padding-x">
       <div class="cell medium-2 small-4 large-2">
         <manager-menu v-on:onMenuItemSelected="onMenuItemSelected"></manager-menu>
@@ -61,4 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.root{
+  margin: 0.75em 0;
+}
 </style>

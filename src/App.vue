@@ -8,11 +8,13 @@
         <div class="top-bar-left">
           <ul class="menu">
             <li class="logo">
-              <router-link to="/">Sliceflow.com</router-link>
+              <router-link to="/">Wement</router-link>
             </li>
             <li>
               <router-link to="/">主页</router-link>
             <li>
+            <li><router-link to="/">主题</router-link></li>
+            <li><router-link to="/">文档</router-link></li>
             <li>
               <router-link to="/manager">管理中心</router-link>
             </li>
@@ -29,15 +31,23 @@
           </ul>
         </div>
       </div>
+
       <div class="content-wrapper">
         <router-view></router-view>
       </div>
+
+      <footer>
+        <div class="grid-x">
+          <div class="cell">@2017 Wement</div>
+        </div>
+      </footer>
     </div>
   </div>
 </template>
 
 <script>
 import UserInfo from './components/UserInfo'
+import Themes from './components/Themes'
 import * as config from './config'
 import * as g from './gobal'
 
@@ -57,6 +67,7 @@ export default {
         "domain": document.location.host,
         "wement-token": this.token
         }).then(res=>{
+          console.log(res);
           if(res){
             console.log(res.data);
             if(res.data.code == 0){
@@ -115,6 +126,8 @@ export default {
 
 <style lang="scss">  
   @import './styles/global';
+
+  $footer-height: 36px;
   
   // Chrome Reset 
   a:focus {
@@ -138,7 +151,9 @@ export default {
   }
 
   .content-wrapper {
-    padding: 0.75rem 0;
+    padding: 0 0;
+    padding-bottom: $footer-height;
+    background-color: white;
   }
 
   .sidebar-menu {
@@ -168,4 +183,25 @@ export default {
       }
     }
   }
+
+  #app{
+    min-height: 100%;
+  }
+
+  footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height: $footer-height;
+    background-color: #34495e;
+    color: white;
+
+    .cell{
+      padding: 6px 16px;
+      font-size: 14px;
+    }
+  }
+
+  html{height:100%;}
+  body{min-height:100%;margin:0;padding:0;position:relative;}
 </style>
