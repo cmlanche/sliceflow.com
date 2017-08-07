@@ -8,13 +8,13 @@
         <div class="top-bar-left">
           <ul class="menu">
             <li class="logo">
-              <router-link to="/">Wement</router-link>
+              <router-link to="/">Wement.io</router-link>
             </li>
             <li>
               <router-link to="/">主页</router-link>
             <li>
             <li><router-link to="/">主题</router-link></li>
-            <li><router-link to="/">文档</router-link></li>
+            <li><router-link to="/">API</router-link></li>
             <li>
               <router-link to="/manager">管理中心</router-link>
             </li>

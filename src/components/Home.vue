@@ -2,27 +2,26 @@
   <div class="row align-middle">
     <div class="shortDescPart">
       <div class="title1">
-        <span>简单、简洁的评论插件系统</span>
+        <span>专为开发者打造的评论插件系统</span>
       </div>
       <div class="title2">
-        <span>专为程序员打造</span>
+        <span>友好、丰富、收益</span>
       </div>
       <div class="title3">
-        <button type="button" class="button">下载</button>
+        <button type="button" class="button">开始吧 <em>!</em></button>
       </div>
     </div>
 
-    <div class="feature">
+    <div class="features">
       <div class="grid-x">
         <div class="small-3 small-offset-2 cell">
             <div class="card">
-              <div class="card" style="width: 300px;">
+              <div class="card">
                 <div class="card-divider">
-                  This is a header
+                  {{features[0].title}}
                 </div>
-                <img src="../assets/img/head.jpg">                
                 <div class="card-section">
-                  <h4>This is a card.</h4>
+                  <h5>This is a card.</h5>
                   <p>It has an easy to override visual style, and is appropriately subdued.</p>
                 </div>
               </div>
@@ -30,13 +29,12 @@
         </div>
         <div class="small-3 small-offset-2 cell">
           <div class="card">
-              <div class="card" style="width: 300px;">
+              <div class="card">
                 <div class="card-divider">
-                  This is a header
+                  {{features[1].title}}
                 </div>
-                <img src="../assets/img/head.jpg">                
                 <div class="card-section">
-                  <h4>This is a card.</h4>
+                  <h5>This is a card.</h5>
                   <p>It has an easy to override visual style, and is appropriately subdued.</p>
                 </div>
               </div>
@@ -47,13 +45,12 @@
       <div class="grid-x">
         <div class="small-3 small-offset-2 cell">
           <div class="card">
-              <div class="card" style="width: 300px;">
+              <div class="card">
                 <div class="card-divider">
-                  This is a header
+                  {{features[2].title}}
                 </div>
-                <img src="../assets/img/head.jpg">                
                 <div class="card-section">
-                  <h4>This is a card.</h4>
+                  <h5>This is a card.</h5>
                   <p>It has an easy to override visual style, and is appropriately subdued.</p>
                 </div>
               </div>
@@ -61,19 +58,64 @@
         </div>
         <div class="small-3 small-offset-2 cell">
           <div class="card">
-              <div class="card" style="width: 300px;">
+              <div class="card">
                 <div class="card-divider">
-                  This is a header
+                  {{features[3].title}}
                 </div>
-                <img src="../assets/img/head.jpg">                
                 <div class="card-section">
-                  <h4>This is a card.</h4>
+                  <h5>This is a card.</h5>
                   <p>It has an easy to override visual style, and is appropriately subdued.</p>
                 </div>
               </div>
             </div>
         </div>
       </div>
+
+    <div class="grid-x">
+        <div class="small-3 small-offset-2 cell">
+          <div class="card">
+              <div class="card">
+                <div class="card-divider">
+                  {{features[4].title}}
+                </div>
+                <div class="card-section">
+                  <h5>This is a card.</h5>
+                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="small-3 small-offset-2 cell">
+          <div class="card">
+              <div class="card">
+                <div class="card-divider">
+                  {{features[5].title}}
+                </div>
+                <div class="card-section">
+                  <h5>This is a card.</h5>
+                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="grid-x">
+        <div class="small-3 small-offset-2 cell">
+          <div class="card">
+              <div class="card">
+                <div class="card-divider">
+                  {{features[6].title}}
+                </div>
+                <div class="card-section">
+                  <h5>This is a card.</h5>
+                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
@@ -84,6 +126,15 @@ export default {
   data() {
     return {
       msg: 'cmlanche',
+      features: [
+        {title: '评论插件系统', desc: '', feas: []},
+        {title: '开放API', desc: '', feas: []},
+        {title: '共享数据服务', desc: '', feas: []},
+        {title: '收益服务', desc: '', feas: []},
+        {title: '友链', desc: '', feas: []},
+        {title: '主题', desc: '', feas: []},
+        {title: '统计', desc: '', feas: []}
+      ]
     };
   },
 };
@@ -133,11 +184,27 @@ export default {
     }
   }
 
-  .feature{
+  .card-divider{
+    font-weight: bold;
+  }
+  .features{
       text-align: center;
+      margin: 16px 0 0 0;
       .feature_title{
         text-align: center;
       }
     }
+
+  
+  .card-section{
+    text-align: left;
+  }
+
+  button{
+    em{
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
 
 </style>
