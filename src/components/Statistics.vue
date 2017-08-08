@@ -9,11 +9,16 @@
 </template>
 
 <script>
+import * as config from '../config'
 // 统计信息
 export default {
   name: 'statistics',
   mounted(){
-    this.$http.post("/stat/general", {'wement-token': localStorage.getItem('wm-token')}).then(res=>{
+    console.log(config.getUser().website)
+    this.$http.post("/stat/general", {
+      'wement-token': localStorage.getItem('wm-token'),
+      'websiteid': config.getUser().website.id
+      }).then(res=>{
       console.log(res)
       if(res){
         if(res.data.code == 0){

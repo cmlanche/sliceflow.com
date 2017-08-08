@@ -14,28 +14,26 @@
 
     <div class="features">
       <div class="grid-x">
-        <div class="small-3 small-offset-2 cell">
+        <div class="small-6 cell">
             <div class="card">
               <div class="card">
                 <div class="card-divider">
                   {{features[0].title}}
                 </div>
                 <div class="card-section">
-                  <h5>This is a card.</h5>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                  <p>专门为技术开发者个人博客打造的评论插件系统，安装简单，及时反馈，用心为开发者服务</p>
                 </div>
               </div>
             </div>
         </div>
-        <div class="small-3 small-offset-2 cell">
+        <div class="small-6 cell">
           <div class="card">
               <div class="card">
                 <div class="card-divider">
                   {{features[1].title}}
                 </div>
                 <div class="card-section">
-                  <h5>This is a card.</h5>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                  <p>开放的评论API，可以允许您自己制作属于自己的评论插件</p>
                 </div>
               </div>
             </div>
@@ -43,28 +41,26 @@
       </div>
 
       <div class="grid-x">
-        <div class="small-3 small-offset-2 cell">
+        <div class="small-6 cell">
           <div class="card">
               <div class="card">
                 <div class="card-divider">
                   {{features[2].title}}
                 </div>
                 <div class="card-section">
-                  <h5>This is a card.</h5>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                  <p>提供强大的数据存储服务，保证稳定，数据不丢失，支持数据导出</p>
                 </div>
               </div>
             </div>
         </div>
-        <div class="small-3 small-offset-2 cell">
+        <div class="small-6 cell">
           <div class="card">
               <div class="card">
                 <div class="card-divider">
                   {{features[3].title}}
                 </div>
                 <div class="card-section">
-                  <h5>This is a card.</h5>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                  <p>保证开发者写文章的劳动所得，收益主要来源于评论插件广告、捐赠</p>
                 </div>
               </div>
             </div>
@@ -72,28 +68,26 @@
       </div>
 
     <div class="grid-x">
-        <div class="small-3 small-offset-2 cell">
+        <div class="small-6 cell">
           <div class="card">
               <div class="card">
                 <div class="card-divider">
                   {{features[4].title}}
                 </div>
                 <div class="card-section">
-                  <h5>This is a card.</h5>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                  <p>开发者再也不需要自行维护友链，开发者只需要收藏其他网站的链接即可</p>
                 </div>
               </div>
             </div>
         </div>
-        <div class="small-3 small-offset-2 cell">
+        <div class="small-6 cell">
           <div class="card">
               <div class="card">
                 <div class="card-divider">
                   {{features[5].title}}
                 </div>
                 <div class="card-section">
-                  <h5>This is a card.</h5>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                  <p>不同的网站，风格自然可能不一样，我们提供其他开发者开发的主题，开放下载，也许您应该请他喝一杯奶茶</p>
                 </div>
               </div>
             </div>
@@ -101,15 +95,14 @@
       </div>
 
       <div class="grid-x">
-        <div class="small-3 small-offset-2 cell">
+        <div class="small-6 cell">
           <div class="card">
               <div class="card">
                 <div class="card-divider">
                   {{features[6].title}}
                 </div>
                 <div class="card-section">
-                  <h5>This is a card.</h5>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                  <p>统计您的文章被访问的次数非常重要，我们提供PV，IP访问统计功能</p>
                 </div>
               </div>
             </div>
@@ -189,16 +182,23 @@ export default {
   }
   .features{
       text-align: center;
-      margin: 16px 0 0 0;
+      margin: 16px 32px 0 32px;
       .feature_title{
         text-align: center;
       }
     }
 
-  
-  .card-section{
-    text-align: left;
+  .card{
+    border: none;
+    .card-divider{
+      background: transparent;
+      font-size: 24px;
+    }
+    .card-section{
+      text-align: left;
+    }
   }
+  
 
   button{
     em{
