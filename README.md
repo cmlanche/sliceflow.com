@@ -1,13 +1,17 @@
-# vue-foundation
+# wement.io
 
-> A boilerplate integrating Foundation for Sites and VueJS
+> this site build with [vuejs](https://cn.vuejs.org) & [foundation](http://foundation.zurb.com)
 
-This repository is an example of how to use [Foundation for Sites](https://github.com/zurb/foundation-sites) in a [Vue](https://github.com/vuejs/vue) single-page application. The project is scaffolded using [vue-cli](https://github.com/vuejs/vue-cli), with the [webpack](https://github.com/vuejs-templates/webpack) template, and [vue-router](https://github.com/vuejs/vue-router). 
+## What is wement.io ?
 
-A detailed description of the project [is available here](https://medium.com/@tommaso.marcelli/setting-up-vue-2-and-foundation-6-3f858b4ad20#.mfkp11mid).
+wement.io is a website provide a professional comment plugin for developer`s personal blog site, include data storage service, earnings service, open api, comment themes, access statistics, friend links and so on.
 
-## Warning
-The master branch is based on a recent vue-cli template, which makes use of Webpack 2. For a working configuration using Webpack 1, check out the [webpackv1 branch](https://github.com/hal0gen/vue-foundation/tree/webpackv1)
+## Reason to develop this website
+
+Why you write blogs to CSDN, cnblogs others blog systems you can not have any earning back ? Why your link of blogs are shared by you or others to 开发者头条, but you have nothing back, it is very unfair, Nowadays more and more developers like build there own personal blog site, but few of them have comment system, and they can hardly get pay back to the blog, so I think to build wement.io to ensure the comment service and earnings. may be you agree with me, and want to take part in our projection, please contact me with any of communication ways:
+
+* QQ: 1204833748
+* Wechat: cmlanche
 
 ## Build Setup
 
@@ -22,41 +26,6 @@ npm start
 npm run build
 ```
 
-# CSS/SASS
+## Thanks to 
 
-CSS setup resides in the `src/styles` folder.
-
-`app.scss` gets imported in every Vue component, through modified `cssLoaders` in `build/utils.js` (see [vuejs-templates/webpack#149](https://github.com/vuejs-templates/webpack/issues/149)):
-```js
-return {
-    // ...,
-    scss: generateLoaders(['css', 'sass?data=@import "~src/styles/app";']), 
-    // ...,
-  }
-```
-As a result, Foundation mixins are now available in Vue components, without the need for an `@import` statement in every style declaration. In order for this to work, every CSS declaration in components needs to use SCSS:
-
-```html
-<style lang="scss">
-    // styles
-</style>
-```
-
-`_settings.scss` is also imported: this is the original Foundation variables file. The only change required to make it work is the import path of Foundation `util`. 
-
-`global.scss` gets imported in the root component. It initializes Foundation, loads custom icon fonts and Motion UI.
-
-`_icons.scss` is a modified Fontello build (all `url`s in `@font-face` declaration). Instead of using the default `static` folder for assets, this project is configured to process fonts and images with custom loaders, in `build/webpack.base.conf.js`.
-
-# Javascript
-
-This project uses a Vue mixin, in `mixins/foundation.js`, which takes care of initializing and destroying Foundation components at the right time. It can be included in every `.vue` file using a Foundation JS component, as long as it's not initialized more than once on the same UI element. 
-
-### Off-Canvas
-As shown in `App.vue`, this component should be directly instantiated using `new Foundation.OffCanvas(element, options)`. This is preferable to using the mixin, as it would initialize Foundation twice on some parts of the DOM.
-
-### Orbit
-In order to work properly, [Orbit needs the Motion UI library](http://foundation.zurb.com/sites/docs/orbit.html#using-animation).
-
-### Slider
-This component requires listening to Foundation custom events, setting a `v-model` on the hidden input will not work, as explained here: [vuejs/vue#372](https://github.com/vuejs/vue/issues/372) 
+* [vue-foundation](https://github.com/vue-foundation/vue-foundation) 脚手架
