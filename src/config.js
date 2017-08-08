@@ -1,11 +1,11 @@
-var sf_product = false;
+var sf_product = true;
 var sf_user = {
     isLogin: false
 };
 
 export function getServerUrl(){
     if(sf_product){
-        return "http://sliceflow.com"
+        return "http://119.23.204.101:9000"
     }else{
         return "http://localhost:9000";
     }
