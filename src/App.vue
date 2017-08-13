@@ -13,7 +13,7 @@
             <li>
               <router-link to="/">主页</router-link>
             <li>
-            <li><router-link to="/">主题</router-link></li>
+            <li><router-link to="/">插件主题</router-link></li>
             <li><router-link to="/">API</router-link></li>
             <li>
               <router-link to="/manager">管理中心</router-link>
