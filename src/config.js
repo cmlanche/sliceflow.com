@@ -1,4 +1,4 @@
-var sf_product = false;
+var sf_product = true;
 var sf_user = {
     isLogin: false
 };
